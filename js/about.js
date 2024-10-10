@@ -1,28 +1,48 @@
-    // Text content to be displayed letter by letter
-    const aboutText = `
-I’m Mina Samy, a motivated and skilled Web Developer
-with hands-on experience in Laravel, WordPress, front-end technologies, and Power BI. 
-Seeking to leverage my technical expertise and leadership experience
-to contribute to innovative projects in a collaborative team environment.`;
+// Text content to be displayed sequentially
+const textSequence = [
+    "I'm a Laravel developer",
+    " PowerBI Analyst",
+    " WordPress developer"
+];
 
-    // Function to type out the text letter by letter
-    function typeText(text, element, delay = 35) { // Set delay to 30 milliseconds for faster typing
-        let charIndex = 0;
+let currentTextIndex = 0;
 
-        // Function to type a single character
-        function typeCharacter() {
-            if (charIndex < text.length) {
-                element.textContent += text[charIndex]; // Add the character
-                charIndex++;
-                setTimeout(typeCharacter, delay); // Call the function again after the specified delay
-            }
+// Function to type out the text letter by letter
+function typeText(text, element, delay = 35, onComplete) {
+    let charIndex = 0;
+
+    // Clear the element before starting
+    element.textContent = '';
+
+    // Function to type a single character
+    function typeCharacter() {
+        if (charIndex < text.length) {
+            element.textContent += text[charIndex];
+            charIndex++;
+            setTimeout(typeCharacter, delay);
+        } else {
+            // Text is fully typed, wait before erasing
+            setTimeout(eraseText, 1500);
         }
-
-        typeCharacter(); // Start typing the text
     }
 
-    // Call the function once the document is fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        const descriptionElement = document.getElementById('about-description');
-        typeText(aboutText, descriptionElement, 35); // Adjusted delay for increased speed
-    });
+    // Function to erase the text letter by letter
+    function eraseText() {
+        if (element.textContent.length > 0) {
+            element.textContent = element.textContent.slice(0, -1);
+            setTimeout(eraseText, delay / 2);
+        } else {
+            // Text is fully erased, move to next text or loop back
+            currentTextIndex = (currentTextIndex + 1) % textSequence.length;
+            setTimeout(() => typeText(textSequence[currentTextIndex], element, delay, onComplete), 500);
+        }
+    }
+
+    typeCharacter();
+}
+
+// Call the function once the document is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    const descriptionElement = document.getElementById('about-description');
+    typeText(textSequence[currentTextIndex], descriptionElement, 35);
+});
