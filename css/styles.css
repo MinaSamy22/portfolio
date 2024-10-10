@@ -1,49 +1,45 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-}
-
-/* Home section styles */
-#home {
-    padding: 50px 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .container {
+    width: 90%;
+    margin: auto;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
 }
 
-h1 {
-    color: rgb(0, 64, 129);
-    margin-bottom: 20px;
+h1, h2 {
+    color: #333;
 }
 
 .profile-img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-description {
     font-family: 'Courier New', Courier, monospace;
     white-space: pre-wrap;
-    text-align: left;
+    word-wrap: break-word;
 }
 
-/* Responsive styles */
-@media (min-width: 768px) {
-    .profile-container {
-        display: flex;
-        align-items: center;
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
     }
-
     .profile-img {
-        margin-right: 30px;
-        margin-bottom: 0;
+        max-width: 200px;
+        margin-bottom: 1rem;
     }
 }
-
 
 
 /* Navbar Styles */
