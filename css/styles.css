@@ -31,7 +31,9 @@ h1, h2 {
     word-wrap: break-word;
 }
 
-
+.d-flex {
+    align-items: center;
+}
 
 @media (max-width: 768px) {
     .d-flex {
