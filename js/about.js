@@ -1,8 +1,8 @@
 // Text content to be displayed sequentially
 const textSequence = [
     " Laravel developer",
-    " PowerBI Analyst",
-    " WordPress developer"
+    " WordPress developer",
+    " PowerBI Analyst"  
 ];
 
 let currentTextIndex = 0;
