@@ -1,6 +1,6 @@
 // Text content to be displayed sequentially
 const textSequence = [
-    "I'm a Laravel developer",
+    " Laravel developer",
     " PowerBI Analyst",
     " WordPress developer"
 ];
