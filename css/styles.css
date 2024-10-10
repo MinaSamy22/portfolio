@@ -18,10 +18,31 @@ h1, h2 {
     color: #333;
 }
 
-img {
+.profile-img {
     max-width: 100%;
     height: auto;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.about-description {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+    }
+    .profile-img {
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+}
+
+
 
 /* Navbar Styles */
 .navbar {
