@@ -239,7 +239,7 @@ body.dark-mode .nav-button:hover {
     }
 
     .project-item img {
-        max-height: 100%; /* Ensure image takes up most of the container height */
+        max-height: 150%; /* Ensure image takes up most of the container height */
         width: auto; /* Maintain aspect ratio */
         object-fit: contain;
     }
