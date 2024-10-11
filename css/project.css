@@ -227,8 +227,8 @@ body.dark-mode .nav-button:hover {
         display: flex;
     }
 
-    .project-container {
-        height: 300px;
+  .project-container {
+        height: 500px; /* Increased from 350px to 500px */
     }
 
     .project-item {
@@ -239,14 +239,9 @@ body.dark-mode .nav-button:hover {
     }
 
     .project-item img {
-        max-height: 150%; /* Ensure image takes up most of the container height */
-        width: auto; /* Maintain aspect ratio */
+        max-height: 90%; /* Increased from 80% to 90% */
+        width: auto;
         object-fit: contain;
-    }
-
-    .project-item p {
-        font-size: 1rem;
-        margin-top: 10px; /* Add some space between image and text */
     }
 
     
