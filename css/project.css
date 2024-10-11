@@ -231,10 +231,25 @@ body.dark-mode .nav-button:hover {
         height: 150px;
     }
 
-    .project-item p {
-        font-size: 1rem;
+    .project-item {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
+    .project-item img {
+        max-height: 80%; /* Ensure image takes up most of the container height */
+        width: auto; /* Maintain aspect ratio */
+        object-fit: contain;
+    }
+
+    .project-item p {
+        font-size: 1rem;
+        margin-top: 10px; /* Add some space between image and text */
+    }
+
+    
     .nav-button {
         font-size: 1.8rem;
         padding: 8px;
