@@ -23,7 +23,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #196AB3;
+    background-color: #49709f;
     position: relative;
     transition: all 0.3s ease;
 }
@@ -34,7 +34,7 @@
     position: absolute;
     width: 25px;
     height: 3px;
-    background-color: #196AB3;
+    background-color: #49709f;
     transition: all 0.3s ease;
 }
 
@@ -109,33 +109,36 @@ header {   /*34an eb2a fe zhoor ll nav bar*/
     left: 0;
     width: 100%;
     z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
 }
 
 .navlogo {
-    margin-top: 10px;
-    margin-left: 4%;
     height: 60px;
-    float: left; /*34an al logo eb2a el shmal*/
+    margin-right: 10px;
 }
 
 header h4 {
-    margin-top: 30px;
-    margin-left: 0.5%;
-    width: auto;
-    float: left;
-    color: rgb(82, 122, 191); /*34an al asm elgamb el logo*/
+    color: rgb(82, 122, 191);
 }
 
 .main-nav {
-    float: right;
     list-style: none;
-    margin-top: 30px;
-    margin-right: 4%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .main-nav li {
     display: inline-block;
-    margin-left: 15px;
+    margin: 0 15px;
 }
 
 /* Navigation link styling - increase font weight */
@@ -147,6 +150,8 @@ header h4 {
     font-weight: 600;    /* Changed from 110 to 600 for bolder text */
     font-size: 85%;
     transition: 0.5s;
+    position: relative;
+    display: inline-block;
 }
 
 ul:hover li .a2 {
@@ -183,26 +188,34 @@ ul li .a2:hover:before {
     transform-origin: left;
     transform: scaleX(1);
 }
+
 /*--------------- Mobile Responsiveness ---------------------*/
 @media screen and (max-width: 768px) {
     /* Header */
     header {
         height: auto;
         padding: 10px 0;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-brand {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .navlogo {
-        margin-top: 5px;
         height: 50px;
     }
 
     header h4 {
-        margin-top: 15px;
         font-size: 80%;
     }
 
     .main-nav {
-        float: none;
+        position: static;
+        transform: none;
+        width: 100%;
         text-align: center;
         margin-top: 10px;
     }
