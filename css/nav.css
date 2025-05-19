@@ -110,35 +110,41 @@ header {   /*34an eb2a fe zhoor ll nav bar*/
     width: 100%;
     z-index: 10000;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 4%;
+    align-items: center;
 }
 
-.nav-brand {
+.logo-container {
     display: flex;
     align-items: center;
+    margin-left: 4%;
 }
 
 .navlogo {
+    margin-top: 10px;
     height: 60px;
-    margin-right: 10px;
 }
 
 header h4 {
-    color: rgb(82, 122, 191);
+    margin-top: 0;
+    margin-left: 0.5%;
+    color: rgb(82, 122, 191); /*34an al asm elgamb el logo*/
 }
 
 .main-nav {
+    /* Changed from float: right to text-align: center */
+    text-align: center;
     list-style: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Remove margin-right since we're centering */
+    margin: 0 auto;
+    /* Set width for the nav to make it centered */
+    flex-grow: 1;
 }
 
 .main-nav li {
     display: inline-block;
-    margin: 0 15px;
+    margin-left: 15px;
+    margin-right: 15px; /* Added margin-right for better spacing */
 }
 
 /* Navigation link styling - increase font weight */
@@ -150,8 +156,7 @@ header h4 {
     font-weight: 600;    /* Changed from 110 to 600 for bolder text */
     font-size: 85%;
     transition: 0.5s;
-    position: relative;
-    display: inline-block;
+    position: relative; /* Added for hover effect */
 }
 
 ul:hover li .a2 {
@@ -189,6 +194,11 @@ ul li .a2:hover:before {
     transform: scaleX(1);
 }
 
+/* Empty div for balance in the flex layout */
+.spacer {
+    width: 10%;
+}
+
 /*--------------- Mobile Responsiveness ---------------------*/
 @media screen and (max-width: 768px) {
     /* Header */
@@ -196,26 +206,26 @@ ul li .a2:hover:before {
         height: auto;
         padding: 10px 0;
         flex-direction: column;
-        align-items: flex-start;
+        justify-content: center;
     }
 
-    .nav-brand {
-        width: 100%;
-        justify-content: space-between;
+    .logo-container {
+        margin-left: 0;
+        justify-content: center;
     }
 
     .navlogo {
+        margin-top: 5px;
         height: 50px;
     }
 
     header h4 {
+        margin-top: 15px;
         font-size: 80%;
     }
 
     .main-nav {
-        position: static;
-        transform: none;
-        width: 100%;
+        float: none;
         text-align: center;
         margin-top: 10px;
     }
@@ -223,5 +233,9 @@ ul li .a2:hover:before {
     .main-nav li {
         display: block;
         margin: 10px 0;
+    }
+    
+    .spacer {
+        display: none;
     }
 }
