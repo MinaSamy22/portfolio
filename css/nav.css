@@ -1,40 +1,9 @@
+
 /*----------------Basic setup---------------------*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* CSS for the updated navigation bar */
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-}
-
-.main-nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.contact-nav {
-    margin-left: auto; /* This pushes the contact link to the right */
-    list-style: none;
-}
-
-/* Remove default list styling for the contact link */
-.contact-nav li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 /*to responsive navbar*/
@@ -55,7 +24,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #196AB3;
+    background-color: #49709f;
     position: relative;
     transition: all 0.3s ease;
 }
@@ -66,7 +35,7 @@
     position: absolute;
     width: 25px;
     height: 3px;
-    background-color: #196AB3;
+    background-color: #49709f;
     transition: all 0.3s ease;
 }
 
