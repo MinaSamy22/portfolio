@@ -15,7 +15,7 @@
     padding: 10px;
     position: absolute;
     top: 20px;
-    right: 80px;
+    right: 20px;
     z-index: 1000;
 }
 
@@ -132,12 +132,10 @@ header h4 {
 }
 
 .main-nav {
-    /* Changed from float: right to text-align: center */
+    /* Modified to shift slightly to the right */
     text-align: center;
     list-style: none;
-    /* Remove margin-right since we're centering */
-    margin: 0 auto;
-    /* Set width for the nav to make it centered */
+    margin: 0 auto 0 10%;  /* Added left margin to push content right */
     flex-grow: 1;
 }
 
