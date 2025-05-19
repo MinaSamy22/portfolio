@@ -16,72 +16,26 @@
     <!-- Navigation -->
     <header>
         <nav class="navbar">
-            <div class="navbar-container">
-                <div class="logo-container">
-                    <a href="#home" class="logo">
-                        <h4>Mina Samy</h4>
-                    </a>
-                </div>
-                
+            <div>
+                <h4 style="margin-left: 80px">Mina Samy</h4>
                 <!-- Toggle Button for Mobile -->
                 <button class="nav-toggle" aria-label="toggle navigation">
                     <span class="hamburger"></span>
                 </button>
-                
                 <!-- Navigation Links -->
-                <div class="nav-links-container">
-                    <ul class="main-nav">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about-me">About me</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#my-work">MY Work</a></li>
-                        <li><a href="#contact">Contact me</a></li>
-                        <li><a href="#" class="theme-toggle"><i class="fas fa-sun"></i></a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Button -->
-                <div class="contact-btn-container">
-                    <a href="#contact" class="contact-btn">Contact <i class="fas fa-arrow-right"></i></a>
-                </div>
+                <ul class="main-nav">
+                   <li><a class="a2" href="#home">Home</a></li>
+                <li><a class="a2" href="#qualifications">Qualifications</a></li>
+                <li><a class="a2" href="#skills">Skills</a></li>
+                <li><a class="a2" href="#projects">Projects</a></li>
+                <li><a class="a2" href="#certificates">Certificates</a></li>
+<!--                 <li><a class="a2" href="CV.pdf" download="CV.pdf"><i class="fas fa-download"></i>CV</a></li>   -->
+                <li><a class="a2" href="#contact">Contact</a></li> 
+                <li><a class="a2" href="#dark"><i class="fas fa-moon dark-mode-icon"></i>   </a></li>
+                </ul>
             </div>
         </nav>
     </header>
-
-    <main>
-        <!-- Your page content goes here -->
-    </main>
-
-    <script>
-        // Mobile menu toggle
-        const navToggle = document.querySelector('.nav-toggle');
-        const mainNav = document.querySelector('.main-nav');
-        
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
-        });
-        
-        // Theme toggle (light/dark mode)
-        const themeToggle = document.querySelector('.theme-toggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('i');
-        
-        themeToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            body.classList.toggle('light-mode');
-            
-            // Toggle icon between sun and moon
-            if (icon.classList.contains('fa-sun')) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        });
-    </script>
-
 
 <br><br><br><br><br>
 
