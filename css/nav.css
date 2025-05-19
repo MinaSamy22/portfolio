@@ -1,30 +1,170 @@
-
-/*----------------Basic setup---------------------*/
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*to responsive navbar*/
-/*--------------- Toggle Button for Mobile ---------------------*/
+html {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a001a; /* Dark purple/navy background */
+    color: #ffffff;
+}
+
+/* Light Mode Toggle */
+body.light-mode {
+    background-color: #ffffff;
+    color: #333;
+}
+
+body.light-mode header {
+    background-color: #ffffff;
+}
+
+body.light-mode .navbar-container {
+    background-color: #ffffff;
+}
+
+body.light-mode .main-nav li a {
+    color: #333;
+}
+
+body.light-mode .logo h4 {
+    color: #333;
+}
+
+body.light-mode .contact-btn {
+    background-color: #9a78eb;
+    color: #ffffff;
+}
+
+/* Header and Navbar Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #0a001a; /* Dark purple/navy background */
+    padding: 0;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 80px;
+}
+
+/* Logo Styles */
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.logo h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Navigation Links */
+.nav-links-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-nav li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.main-nav li a:hover {
+    color: #9a78eb; /* Light purple highlight */
+}
+
+.main-nav li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #9a78eb; /* Light purple highlight */
+    transition: width 0.3s ease;
+}
+
+.main-nav li a:hover::after {
+    width: 100%;
+}
+
+/* Contact Button */
+.contact-btn-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #9a78eb; /* Light purple */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #7c5bd6; /* Slightly darker purple on hover */
+}
+
+.contact-btn i {
+    font-size: 0.9rem;
+}
+
+/* Mobile Toggle Button */
 .nav-toggle {
-    display: none; /* Hide by default */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
     z-index: 1000;
 }
 
 .hamburger {
     display: block;
     width: 25px;
-    height: 3px;
-    background-color: #49709f;
+    height: 2px;
+    background-color: #ffffff;
     position: relative;
     transition: all 0.3s ease;
 }
@@ -34,9 +174,15 @@
     content: '';
     position: absolute;
     width: 25px;
-    height: 3px;
-    background-color: #49709f;
+    height: 2px;
+    background-color: #ffffff;
     transition: all 0.3s ease;
+}
+
+body.light-mode .hamburger,
+body.light-mode .hamburger::before,
+body.light-mode .hamburger::after {
+    background-color: #333;
 }
 
 .hamburger::before {
@@ -60,227 +206,58 @@
     transform: rotate(-45deg);
 }
 
-/* Mobile Navbar Styles */
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .navbar-container {
+        padding: 0 15px;
+    }
+    
+    .main-nav {
+        gap: 20px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .nav-toggle {
-        display: block; /* Show toggle button on mobile */
+        display: block;
     }
-
-    .main-nav {
-        display: none; /* Hide nav links by default on mobile */
+    
+    .navbar-container {
+        position: relative;
+    }
+    
+    .nav-links-container {
         position: absolute;
-        top: 75px;
+        top: 80px;
         left: 0;
         width: 100%;
-        background-color: #f0efef;
-        text-align: center;
-        padding: 10px 0;
+        background-color: #0a001a;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
     }
-
-    .main-nav.active {
-        display: block; /* Show nav links when active */
+    
+    body.light-mode .nav-links-container {
+        background-color: #ffffff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-
-    .main-nav li {
-        display: block;
-        margin: 15px 0;
-    }
-
-    .main-nav li a {
-        font-size: 25px; /* Increase font size for better readability */
-    }
-}
-
-
-html {
-    background-color: #ffffff;     /*#f9f9f9*/
-    color: #555;
-    font-family: 'Lato', 'Arial', sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    text-rendering: optimizeLegibility;
-    scroll-behavior: smooth;
-}
-
-header {   /*34an eb2a fe zhoor ll nav bar*/
-    background-color: #ffffff;     /*#f0efef */
-    height: 75px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000;
-}
-
-.navlogo {
-    margin-top: 10px;
-    margin-left: 4%;
-    height: 60px;
-    float: left; /*34an al logo eb2a el shmal*/
-}
-
-header h4 {
-    margin-top: 30px;
-    margin-left: 0.5%;
-    width: auto;
-    float: left;
-    color: rgb(82, 122, 191); /*34an al asm elgamb el logo*/
-}
-
-.main-nav {
-    float: right;
-    list-style: none;
-    margin-top: 30px;
-    margin-right: 4%;
-}
-
-.main-nav li {
-    display: inline-block;
-    margin-left: 15px;
-}
-
-/* Navigation link styling - increase font weight */
-.main-nav li a:link,
-.main-nav li a:visited {
-    padding: 5px 4px;
-    color: #196AB3;
-    text-decoration: none;
-    font-weight: 600;    /* Changed from 110 to 600 for bolder text */
-    font-size: 85%;
-    transition: 0.5s;
-}
-
-ul:hover li .a2 {
-    transform: scale(1.5);
-    opacity: 0.9;
-    filter: blur(5px);
-}
-
-ul li .a2:hover {
-    transform: scale(2);
-    opacity: 1;
-    filter: blur(0);
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-}
-
-ul li .a2:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #77c0ff; /* lon hover */
-    transition: 0.5s;
-    transform-origin: right;
-    transform: scaleX(0);
-    z-index: -1;
-    border-radius: 10px;
-}
-
-ul li .a2:hover:before {
-    transition: transform 0.5s;
-    transform-origin: left;
-    transform: scaleX(1);
-}
-/*--------------- Mobile Responsiveness ---------------------*/
-@media screen and (max-width: 768px) {
-    /* Header */
-    header {
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .navlogo {
-        margin-top: 5px;
-        height: 50px;
-    }
-
-    header h4 {
-        margin-top: 15px;
-        font-size: 80%;
-    }
-
+    
     .main-nav {
-        float: none;
-        text-align: center;
-        margin-top: 10px;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
     }
-
-    .main-nav li {
-        display: block;
-        margin: 10px 0;
+    
+    .main-nav.active + .nav-links-container {
+        max-height: 300px;
+    }
+    
+    .contact-btn-container {
+        display: none;
+    }
+    
+    .main-nav li a {
+        font-size: 1.1rem;
     }
 }
-
-
-
-.navbar {
-    background: transparent;
-    height: 100px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-container {
-    background-color: #1a0034; /* dark background */
-    width: 90%;
-    max-width: 1200px;
-    padding: 15px 30px;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-logo {
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.main-nav {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.main-nav li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.main-nav li a:hover {
-    color: #77c0ff;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.contact-button {
-    color: white;
-    text-decoration: none;
-    border: 1px solid white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.contact-button:hover {
-    background-color: white;
-    color: #1a0034;
-}
-
