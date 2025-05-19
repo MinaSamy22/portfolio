@@ -5,9 +5,10 @@
     box-sizing: border-box;
 }
 
-/* Toggle Button for Mobile */
+/*to responsive navbar*/
+/*--------------- Toggle Button for Mobile ---------------------*/
 .nav-toggle {
-    display: none;
+    display: none; /* Hide by default */
     background: none;
     border: none;
     cursor: pointer;
@@ -22,7 +23,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #49709f;
+    background-color: #196AB3;
     position: relative;
     transition: all 0.3s ease;
 }
@@ -33,7 +34,7 @@
     position: absolute;
     width: 25px;
     height: 3px;
-    background-color: #49709f;
+    background-color: #196AB3;
     transition: all 0.3s ease;
 }
 
@@ -45,6 +46,7 @@
     transform: translateY(8px);
 }
 
+/* Active State for Toggle Button */
 .nav-toggle.active .hamburger {
     background: transparent;
 }
@@ -60,11 +62,11 @@
 /* Mobile Navbar Styles */
 @media screen and (max-width: 768px) {
     .nav-toggle {
-        display: block;
+        display: block; /* Show toggle button on mobile */
     }
 
     .main-nav {
-        display: none;
+        display: none; /* Hide nav links by default on mobile */
         position: absolute;
         top: 75px;
         left: 0;
@@ -72,11 +74,10 @@
         background-color: #f0efef;
         text-align: center;
         padding: 10px 0;
-        flex-direction: column;
     }
 
     .main-nav.active {
-        display: flex;
+        display: block; /* Show nav links when active */
     }
 
     .main-nav li {
@@ -85,12 +86,13 @@
     }
 
     .main-nav li a {
-        font-size: 25px;
+        font-size: 25px; /* Increase font size for better readability */
     }
 }
 
+
 html {
-    background-color: #ffffff;
+    background-color: #ffffff;     /*#f9f9f9*/
     color: #555;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
@@ -99,50 +101,50 @@ html {
     scroll-behavior: smooth;
 }
 
-header {
-    background-color: #ffffff;
+header {   /*34an eb2a fe zhoor ll nav bar*/
+    background-color: #ffffff;     /*#f0efef */
     height: 75px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10000;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 4%;
 }
 
 .navlogo {
+    margin-top: 10px;
+    margin-left: 4%;
     height: 60px;
+    float: left; /*34an al logo eb2a el shmal*/
 }
 
 header h4 {
+    margin-top: 30px;
     margin-left: 0.5%;
-    color: rgb(82, 122, 191);
+    width: auto;
+    float: left;
+    color: rgb(82, 122, 191); /*34an al asm elgamb el logo*/
 }
 
-/* Centered nav links */
 .main-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    float: right;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-top: 30px;
+    margin-right: 4%;
 }
 
 .main-nav li {
+    display: inline-block;
     margin-left: 15px;
 }
 
+/* Navigation link styling - increase font weight */
 .main-nav li a:link,
 .main-nav li a:visited {
     padding: 5px 4px;
     color: #196AB3;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 600;    /* Changed from 110 to 600 for bolder text */
     font-size: 85%;
     transition: 0.5s;
 }
@@ -168,7 +170,7 @@ ul li .a2:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #77c0ff;
+    background: #77c0ff; /* lon hover */
     transition: 0.5s;
     transform-origin: right;
     transform: scaleX(0);
@@ -181,28 +183,26 @@ ul li .a2:hover:before {
     transform-origin: left;
     transform: scaleX(1);
 }
-
-/* Mobile Responsiveness */
+/*--------------- Mobile Responsiveness ---------------------*/
 @media screen and (max-width: 768px) {
+    /* Header */
     header {
         height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 4%;
+        padding: 10px 0;
     }
 
     .navlogo {
-        height: 50px;
         margin-top: 5px;
+        height: 50px;
     }
 
     header h4 {
-        margin-top: 5px;
+        margin-top: 15px;
         font-size: 80%;
     }
 
     .main-nav {
-        width: 100%;
+        float: none;
         text-align: center;
         margin-top: 10px;
     }
