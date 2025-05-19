@@ -23,7 +23,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #196AB3;
+    background-color: #49709f;
     position: relative;
     transition: all 0.3s ease;
 }
@@ -34,7 +34,7 @@
     position: absolute;
     width: 25px;
     height: 3px;
-    background-color: #196AB3;
+    background-color: #49709f;
     transition: all 0.3s ease;
 }
 
