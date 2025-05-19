@@ -23,6 +23,83 @@ img {
     height: auto;
 }
 
+/* Navbar Styles */
+.navbar {
+    background: #49709f;
+    padding: 15px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1e90ff;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: #49709f;
+    color: #fff;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #333;
+        padding: 10px;
+        width: 200px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .brand {
+        margin-left: 0;
+    }
+}
+
 /* Certificates */
 .certificates {
     padding: 50px 0;
@@ -190,6 +267,7 @@ img {
     right: 0px;
 }
 
+
 /* Responsive  */
 @media (min-width: 768px) {
     .project-item {
@@ -234,6 +312,8 @@ body.dark-mode .nav-button {
 body.dark-mode .nav-button:hover {
     background-color: rgba(187, 134, 252, 0.9);
 }
+
+
 
 /* Qualifications */
 .qualifications {
@@ -410,8 +490,8 @@ body.dark-mode .nav-button:hover {
     width: 100%;
     max-width: 350px;
     height: auto;
-    max-height: 340px;
-    object-fit: cover;
+    max-height: 340px; /* Added this line to decrease the maximum height */
+    object-fit: cover; /* Added to maintain aspect ratio */
     transition: transform 0.3s;
     margin-top: 0px;
 }
@@ -419,3 +499,269 @@ body.dark-mode .nav-button:hover {
 .profile-img:hover {
     transform: scale(1.05);
 }
+
+/* Responsive Home */
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about-description {
+        font-size: 1.2rem;
+    }
+
+    .profile-img {
+        max-width: 250px;
+        max-height: 150px; /* Adjusted for smaller screens */
+    }
+}
+
+
+/* Footer */
+.footer {
+    background: #013659;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.contact-line i {
+    color: aliceblue;
+    margin-right: 5px;
+}
+
+.contact-line strong {
+    margin-right: 5px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #1e90ff;
+}
+
+/* Responsive Footer */
+@media (max-width: 576px) {
+    .contact-info p {
+        font-size: 0.9em;
+    }
+
+    .contact-line {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Separator Style */
+.separator {
+    border: none;
+    border-top: 1px solid #0810f1;
+    margin: 20px 0;
+    height: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.separator span {
+    background: #fff;
+    padding: 0 10px;
+    color: #0810f1;
+}
+
+/* Ball styles */
+.ball {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    background-color: rgba(30, 144, 255, 0.8);
+}
+
+/* Responsive adjustments for ball */
+@media (max-width: 768px) {
+    .ball {
+        display: none; /* Hide the ball on smaller screens to improve performance */
+    }
+}
+
+
+
+
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2d2d2d;
+    color: #f1f1f1;
+}
+
+
+
+/* Dark mode styles for menu toggle */
+body.dark-mode .menu-toggle {
+    background: #333; /* Darker background in dark mode */
+    color: #f1f1f1; /* Lighter text color in dark mode */
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #333;
+        padding: 10px;
+        width: 200px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    /* Dark mode styles for nav links in mobile view */
+    body.dark-mode .nav-links {
+        background: #222; /* Even darker background for the dropdown in dark mode */
+    }
+
+    body.dark-mode .nav-links a {
+        color: #f1f1f1; /* Ensure text is visible in dark mode */
+    }
+
+    body.dark-mode .nav-links a:hover {
+        color: #bb86fc; /* Maintain the hover color from your existing dark mode styles */
+    }
+}
+
+/* Hover state for the menu toggle */
+.menu-toggle:hover {
+    background: #3a5a7d; /* Slightly darker shade for hover in light mode */
+}
+
+body.dark-mode .menu-toggle:hover {
+    background: #444; /* Slightly lighter shade for hover in dark mode */
+}
+
+
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+    color: #0f55cd;
+}
+
+body.dark-mode .navbar {
+    background: #414141;
+}
+
+body.dark-mode .nav-links a {
+    color: #f1f1f1;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #bb86fc;
+}
+
+body.dark-mode .certificates,
+body.dark-mode .skills-half,
+
+body.dark-mode .qualifications {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .certificate-card.large {
+    background-color: #222222;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .timeline-item
+ {
+    background-color: #222222;
+    color: #f1f1f1;
+}
+
+body.dark-mode .footer{
+    background-color: rgba(24, 38, 52, 0.8);
+
+}
+
+
+body.dark-mode .skills-list .skill-item {
+    background-color: #333333;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .separator {
+    border-top: 1px solid #bb86fc;
+}
+
+body.dark-mode .nav-button {
+    background-color: rgb(0, 27, 84);
+}
+
+body.dark-mode .nav-button:hover {
+    background-color: rgba(77, 74, 74, 0.7);
+}
+
+
+
+/* Ball styles */
+.ball {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    background-color: rgba(24, 38, 52, 0.8); /* Light mode color */
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Dark Mode Ball styles */
+body.dark-mode .ball {
+    background-color: #414141; /* Dark mode color  must be edited inside js */
+}
+
+/* Responsive adjustments for ball */
+@media (max-width: 768px) {
+    .ball {
+        display: none; /* Hide the ball on smaller screens to improve performance */
+    }
+}
+
+/* Ensure other dark mode styles are working */
+body.dark-mode {
+    background-color: #2d2d2d;
+    color: #f1f1f1;
+}
+
+/* You can add a test element to verify dark mode is working */
+.dark-mode-test {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+}
+
+body.dark-mode .dark-mode-test {
+    background-color: #bb86fc;
+    color: #000;
+}
+
+
